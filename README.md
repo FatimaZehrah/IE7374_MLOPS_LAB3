@@ -264,6 +264,8 @@ Upload a file into:
 - BigQuery table is loaded
 - audit row is inserted
 
+<img width="1849" height="117" alt="image" src="https://github.com/user-attachments/assets/83b2c382-37f4-4af4-a19e-a640a1225d2a" />
+
 ---
 
 ## **How to Re-run the Lab**
