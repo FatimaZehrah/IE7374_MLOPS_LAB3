@@ -266,6 +266,9 @@ Upload a file into:
 
 <img width="1849" height="117" alt="image" src="https://github.com/user-attachments/assets/83b2c382-37f4-4af4-a19e-a640a1225d2a" />
 
+
+<img width="1946" height="819" alt="image" src="https://github.com/user-attachments/assets/738e8d34-1f21-42ff-a1d1-ca768a0d5f4b" />
+
 ---
 
 ## **How to Re-run the Lab**
