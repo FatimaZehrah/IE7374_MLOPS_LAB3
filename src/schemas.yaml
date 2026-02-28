@@ -33,4 +33,3 @@ ga_sessions:
     - name: channelGrouping
       type: STRING
       mode: NULLABLE
-
