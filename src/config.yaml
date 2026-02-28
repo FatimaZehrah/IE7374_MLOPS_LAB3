@@ -17,4 +17,3 @@ tables:
     clustering_fields:
       - "device_category"
       - "country"
-
