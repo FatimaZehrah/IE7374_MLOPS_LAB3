@@ -1,1 +1,36 @@
+ga_sessions:
+  schema:
+    - name: session_date
+      type: DATE
+      mode: NULLABLE
+    - name: fullVisitorId
+      type: STRING
+      mode: NULLABLE
+    - name: visitId
+      type: INTEGER
+      mode: NULLABLE
+    - name: visitNumber
+      type: INTEGER
+      mode: NULLABLE
+    - name: visits
+      type: INTEGER
+      mode: NULLABLE
+    - name: pageviews
+      type: INTEGER
+      mode: NULLABLE
+    - name: transactions
+      type: INTEGER
+      mode: NULLABLE
+    - name: revenue_micros
+      type: INTEGER
+      mode: NULLABLE
+    - name: device_category
+      type: STRING
+      mode: NULLABLE
+    - name: country
+      type: STRING
+      mode: NULLABLE
+    - name: channelGrouping
+      type: STRING
+      mode: NULLABLE
 
