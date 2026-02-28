@@ -1,1 +1,20 @@
+project_id: "gcp-lab1-fatimazehrah"
+dataset_id: "staging"
+
+incoming_prefix: "incoming/"
+rejected_prefix: "rejected/"
+archive_prefix: "archive/"
+
+routing:
+  sessions: "ga_sessions"
+
+allowed_extensions:
+  - ".ndjson"
+
+tables:
+  ga_sessions:
+    partition_field: "session_date"
+    clustering_fields:
+      - "device_category"
+      - "country"
 
