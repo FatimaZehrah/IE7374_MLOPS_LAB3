@@ -190,6 +190,7 @@ SELECT
   channelGrouping
 FROM `bigquery-public-data.google_analytics_sample.ga_sessions_20170801`
 LIMIT 5000;
+```
 
 ### **Step 6: Export the Sample Table to GCS as NDJSON**
 Export the table to:
@@ -216,6 +217,7 @@ CREATE TABLE IF NOT EXISTS `gcp-lab1-fatimazehrah.staging.load_audit` (
   rows_loaded INT64,
   bq_job_id STRING
 );
+```
 
 ### **Step 8: Prepare the GitHub Repository**
 Create a repository with:
