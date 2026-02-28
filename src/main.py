@@ -97,16 +97,30 @@ def insert_audit_row(project_id: str, dataset_id: str, row: dict):
         print("Audit row inserted successfully.")
 
 
-def hello_gcs(event, context):
+def hello_gcs(request):
     config = load_yaml(CONFIG_PATH)
     schemas = load_yaml(SCHEMA_PATH)
 
     project_id = config["project_id"]
     dataset_id = config["dataset_id"]
 
-    bucket_name = event["bucket"]
-    object_name = event["name"]
+    data = request.get_json(silent=True)
+
+    if data is None:
+        raw_data = request.data
+        if raw_data:
+            import json
+            data = json.loads(raw_data)
+        else:
+            raise ValueError("Request body is empty or not valid JSON.")
+
+    bucket_name = data["bucket"]
+    object_name = data["name"]
     gcs_uri = f"gs://{bucket_name}/{object_name}"
+
+    if object_name.startswith(config["archive_prefix"]) or object_name.startswith(config["rejected_prefix"]):
+        print(f"Ignoring non-incoming file: {object_name}")
+        return "Ignored", 200
 
     print(f"Triggered by file: {object_name}")
 
@@ -129,7 +143,7 @@ def hello_gcs(event, context):
         })
 
         print(rejected_reason)
-        return
+        return "Rejected: invalid extension", 200
 
     table_id = route_table(object_name, config)
     if not table_id:
@@ -150,7 +164,7 @@ def hello_gcs(event, context):
         })
 
         print(rejected_reason)
-        return
+        return "Rejected: invalid path", 200
 
     ensure_table_exists(project_id, dataset_id, table_id, schemas, config)
 
@@ -181,3 +195,4 @@ def hello_gcs(event, context):
     move_blob(bucket_name, object_name, archived_name)
 
     print(f"Loaded file {object_name} into {target_table} and archived it.")
+    return "Success", 200
