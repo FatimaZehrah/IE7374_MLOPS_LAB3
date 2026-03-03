@@ -41,9 +41,6 @@ The processed sessions data includes the following fields:
 
 ---
 
-## **My Custom Changes ("New Factors")**
-This lab is not a copy of the original version. I introduced the following changes:
-
 ### **1. Different Dataset**
 Instead of using the original sample JSON approach, I used Google Analytics sample session data and built my own flattened NDJSON test file.
 
@@ -86,8 +83,6 @@ This prevented unnecessary reprocessing.
 The destination BigQuery table is created with:
 - **partitioning** on `session_date`
 - **clustering** on `device_category` and `country`
-
-This makes the implementation more production-like than the original lab.
 
 ---
 
