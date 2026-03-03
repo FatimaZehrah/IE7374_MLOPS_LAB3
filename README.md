@@ -3,7 +3,7 @@
 ## **Overview**
 This lab implements an automated ETL pipeline on Google Cloud. When a newline-delimited JSON (`.ndjson`) file is uploaded to a Google Cloud Storage bucket, a Cloud Run function is triggered automatically. The function validates the file, routes it to the correct BigQuery table, loads the data, logs the outcome in an audit table, and archives the processed file.
 
-This version of the lab is **my own implementation** and extends the original lab by using a different dataset, adding configuration-driven routing, creating an audit log, handling rejected files, and improving archive behavior.
+This version extends the original lab by using a different dataset, adding configuration-driven routing, creating an audit log, handling rejected files, and improving archive behavior.
 
 ---
 
