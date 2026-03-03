@@ -14,8 +14,6 @@ The goal of this lab is to build and verify an event-driven data pipeline that:
 - triggers a Python cloud function automatically  
 - loads data into BigQuery  
 - documents the pipeline clearly for re-running  
-- includes custom enhancements instead of copying the original lab directly  
-
 ---
 
 ## **Dataset Used**
